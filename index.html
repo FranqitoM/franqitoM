@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FranqitoM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #77a5b7;
+            text-align: center;
+            position: relative;
+            /*overflow: hidden;  Para evitar el desplazamiento indeseado si las imágenes están fuera de la vista */
+        }
+        .header {
+            padding: 20px;
+            font-size: 2.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            
+            /* Degradado de color en el texto */
+            background: linear-gradient(45deg, #ff007f, #ff6600, #ffdd00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            /* Contorno negro */
+            text-shadow: 
+                -2px -2px 0 rgb(171, 32, 32),  
+                2px -2px 0 rgb(169, 23, 23),
+                -2px  2px 0 rgb(224, 19, 19),
+                2px  2px 0 rgb(204, 31, 31);
+            
+            /* Efecto de brillo */
+            animation: glow 1.5s infinite alternate;
+        }
+
+        /* Animación de brillo */
+        @keyframes glow {
+            0% { text-shadow: -2px -2px 0 black, 2px -2px 0 rgb(255, 255, 255), -2px 2px 0 rgb(255, 255, 255), 2px 2px 0 black, 0px 0px 10px rgba(255, 105, 180, 0.5); }
+            100% { text-shadow: -2px -2px 0 black, 2px -2px 0 rgb(255, 255, 255), -2px 2px 0 rgb(255, 255, 255), 2px 2px 0 black, 0px 0px 20px rgba(255, 105, 180, 0.9); }
+        }
+
+        .about {
+            margin: 40px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1; /* Para que el contenido de la página esté encima de las imágenes */
+        }
+        .about h2 {
+            font-size: 1.8em;
+            color: #333;
+        }
+        .about p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+        .links {
+            margin: 20px;
+            z-index: 1;
+        }
+        .link-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: black;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .link-btn:hover {
+            transform: scale(1.1);
+            background: lightgray;
+        }
+        .link-btn i {
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px;
+        }
+
+        .youtube-block {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .youtube-block img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            padding: 15px 20px;
+            background: red;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .youtube-btn:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+
+        .text-block {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .text-block h2 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .text-block p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Contenedor de fondo con las imágenes de papel roto */
+        .paper-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Para que las imágenes no interfieran con el contenido de la página */
+            z-index: -1; /* Coloca las imágenes por detrás del contenido */
+        }
+        .paper-img {
+            position: absolute;
+            width: 100px; /* Tamaño inicial */
+            height: auto;
+            transform-origin: center center;
+            opacity: 0.5; /* Hacer las imágenes un poco transparentes */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🚀 Bienvenidos al Universo de FranqitoM 🚀</div>
+
+    <!-- Imagen de portada -->
+    <img src="/public/sources/portada.PNG" alt="FranqitoM" style="width: 100%; height: auto; border-radius: 10px; z-index: 1;">
+
+    <!-- Sección sobre FranqitoM -->
+    <div class="about">
+        <h2>Sobre FranqitoM</h2>
+        <p>FranqitoM es un creador de contenido apasionado por la tecnología y la innovación. En su canal de YouTube, comparte increíbles inventos y tutoriales sobre diversos temas relacionados con la tecnología.</p>
+    </div>
+
+    <!-- Enlaces a redes sociales -->
+    <div class="links">
+        <a class="link-btn" href="https://www.youtube.com/@FranqitoM" target="_blank">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+        <a class="link-btn" href="https://discord.gg/tu-enlace" target="_blank">
+            <i class="fab fa-discord"></i> Discord
+        </a>
+        <a class="link-btn" href="https://www.instagram.com/franqitom/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </div>
+    <div class="container">
+        <!-- Bloque del video de YouTube -->
+        <div class="youtube-block">
+            <iframe width="700" height="482" src="https://www.youtube.com/embed/videoseries?si=pqQzBSZmDuOVKQQ8&amp;list=PLoNbX7IUxj_2l8AwOucsZ6yiYqX1WTuEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <a class="youtube-btn" href="https://www.youtube.com/@FranqitoM" target="_blank">📺 Ver en YouTube</a>
+        </div>
+
+        <!-- Bloque con imagen y párrafo -->
+        <div class="text-block">
+            <h2>Sobre FranqitoM</h2>
+            <p>FranqitoM es un creador de contenido apasionado por la tecnología y la innovación. En su canal de YouTube, comparte increíbles inventos y tutoriales sobre diversos temas relacionados con la tecnología.</p>
+            <img src="/public/sources/perfil.jpg" alt="FranqitoM" style="width: 54.5%; border-radius: 10px;">
+        </div>
+    </div>
+
+    <iframe width="320" height="440" src="https://www.instagram.com/p/DFs0btcPlcU/embed" frameborder="0"></iframe>
+    
+    <div class="paper-background" id="paper-container"></div>
+    <!-- Contenedor para las imágenes del papel roto -->
+    <div class="paper-background" id="paper-container"></div>
+
+
+    <script>
+        // Función para generar imágenes de papel roto de manera aleatoria
+        function generateRandomPaperImages() {
+            const container = document.getElementById('paper-container');
+            const numImages = 60; // Número de imágenes de papel roto
+            const imageSrc = '/public/sources/papelroto.png'; // Ruta de la imagen de papel roto
+
+            for (let i = 0; i < numImages; i++) {
+                const paperImg = document.createElement('img');
+                paperImg.src = imageSrc;
+                paperImg.classList.add('paper-img');
+                
+                // Configuración aleatoria de tamaño, rotación y posición
+                const size = Math.random() * 100 + 50; // Tamaño aleatorio entre 50px y 150px
+                const rotation = Math.random() * 360; // Rotación aleatoria entre 0 y 360 grados
+                const posX = Math.random() * window.innerWidth; // Posición aleatoria en el eje X
+                const posY = Math.random() * window.innerHeight; // Posición aleatoria en el eje Y
+
+                paperImg.style.width = size + 'px';
+                paperImg.style.transform = `rotate(${rotation}deg)`;
+                paperImg.style.left = posX + 'px';
+                paperImg.style.top = posY + 'px';
+
+                container.appendChild(paperImg);
+            }
+        }
+
+        // Llamamos a la función para generar las imágenes al cargar la página
+        window.onload = generateRandomPaperImages;
+    </script>
+</body>
+</html>
